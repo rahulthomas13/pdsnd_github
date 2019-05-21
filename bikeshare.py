@@ -12,7 +12,7 @@ while True:
         print('\nHello! Let\'s explore some US bikeshare data!\n\nAvailable Cities:\n\n1.Chicago \n2.New York \n3.Washington')
         #function to select the city
         def select_city():
-            '''Asks the user for a city and returns the filename for that city's bike share data.
+            '''Asks the user to choose a city from a list and returns the filename for that city's bike share data.
             Args:
                 none.
             Returns:
