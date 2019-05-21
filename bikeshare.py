@@ -109,20 +109,20 @@ while True:
             index_wd =int(df['weekday'].mode())
             num_trips_wd = int(df['weekday'].value_counts()[index_wd-1])
             most_pop_weekday = weekdays[index_wd -1]
-            if QFil_day =='n':
+            if QuesFil_day =='n':
                 Current_popday = int(df_filtered_m['weekday'].mode())#most popular day for the selected month,if all months are selected it would show all months
                 most_pop_weekday_sl= weekdays[Current_popday-1]
                 Current_popday_nt = int(df_filtered_m['weekday'].value_counts()[Current_popday-1])#number of trips made on during popular days that month,,if all months are selected it would show all months
-            elif QFil_day =='y':
+            elif QuesFil_day =='y':
                 Sel_month = months[month-1]
                 Current_popday_nt = int(df_filtered_m['weekday'].value_counts()[day])#number of trips for the selected day
                 Current_popday_nt_tp = int(df['weekday'].value_counts()[day])
                 most_pop_weekday_ch =  weekdays[day]  
             if  QFil_month =='n':
                 print('\nThe most popular day to travel is on a {}.There have been over {} trips made on that day so far!!'.format(most_pop_weekday,num_trips_wd))
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 print('\nThe most popular day to travel is on a {}.There have been over {} trips made on that day so far!!, \n{}\'s in the month of {} and have {} trips and have {} trips in the year so far.'.format(most_pop_weekday,num_trips_wd,most_pop_weekday_ch,Sel_month,Current_popday_nt,Current_popday_nt_tp))
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 Sel_month = months[month-1]
                 print('\nThe most popular day to travel is on a {}.There have been over {} trips made on that day so far!!\nThe most popular day in the month of {} is {} and it has over {} trips'.format(most_pop_weekday,num_trips_wd,Sel_month,most_pop_weekday_sl,Current_popday_nt))
 
@@ -138,12 +138,12 @@ while True:
             if  QFil_month =='n':
                 most_pop_hour1 = int(df['hour'].mode())
                 print('\nThe most popular hour to travel this year seems to be at around the {} hour of the day'.format(most_pop_hour1))
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 most_pop_hour2 = int(df_filtered['hour'].mode())
                 Sel_month = months[month-1]
                 most_pop_weekday_ch =  weekdays[day]
                 print('\nThe most popular hour to travel during the month of {} seems to be at around the {} hour of the day on {}\'s.'.format(Sel_month,most_pop_hour2,most_pop_weekday_ch))
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 most_pop_hour3 = int(df_filtered_m['hour'].mode())
                 Sel_month = months[month-1]
                 print('\nThe most popular hour to travel during the month of {} seems to be at around the {} hour of the day.'.format(Sel_month,most_pop_hour3))
@@ -161,12 +161,12 @@ while True:
             if  QFil_month =='n':
                 most_pop_stn1 = str(df['Start Station'].mode().to_string(index = False))
                 print('\nThe most popular station to travel from this year seems to be at :\n{}.'.format(most_pop_stn1))
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 most_pop_stn2 = str(df_filtered['Start Station'].mode().to_string(index = False))
                 Sel_month = months[month-1]
                 most_pop_weekday_ch =  weekdays[day]
                 print('\nThe most popular station to travel from during the month of {} on {}\'s seems to be at :\n{}.'.format(Sel_month,most_pop_weekday_ch,most_pop_stn2))
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 most_pop_stn3 = str(df_filtered_m['Start Station'].mode().to_string(index = False))
                 Sel_month = months[month-1]
                 print('\nThe most popular station to travel from during the month of {},seems to be at :\n{}.'.format(Sel_month,most_pop_stn3))
@@ -182,12 +182,12 @@ while True:
             if  QFil_month =='n':
                 most_pop_stn1 = str(df['End Station'].mode().to_string(index = False))
                 print('\nThe most popular station to travel to this year seems to be at :\n{}.'.format(most_pop_stn1))
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 most_pop_stn2 = str(df_filtered['End Station'].mode().to_string(index = False))
                 Sel_month = months[month-1]
                 most_pop_weekday_ch =  weekdays[day]
                 print('\nThe most popular station to travel to during the month of {} on {}\'s seems to be at :\n{}.'.format(Sel_month,most_pop_weekday_ch,most_pop_stn2))
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 most_pop_stn3 = str(df_filtered_m['End Station'].mode().to_string(index = False))
                 Sel_month = months[month-1]
                 print('\nThe most popular station to travel to during the month of {},seems to be at :\n{}.'.format(Sel_month,most_pop_stn3))        
@@ -203,12 +203,12 @@ while True:
             if  QFil_month =='n':
                 most_pop_stn1 = str(df['trip'].mode().to_string(index = False))
                 print('\nThe most popular trip(s) to travel on this year seems to be :\n{}.'.format(most_pop_stn1))
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 most_pop_stn2 = str(df_filtered['trip'].mode().to_string(index = False))
                 Sel_month = months[month-1]
                 most_pop_weekday_ch =  weekdays[day]
                 print('\nThe most popular trip(s) to travel on during the month of {} on {}\'s seems to be :\n{}.'.format(Sel_month,most_pop_weekday_ch,most_pop_stn2))
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 most_pop_stn3 = str(df_filtered_m['trip'].mode().to_string(index = False))
                 Sel_month = months[month-1]
                 print('\nThe most popular trip(s) to travel on during the month of {},seems to be :\n{}.'.format(Sel_month,most_pop_stn3))        
@@ -228,14 +228,14 @@ while True:
                 minute, second = divmod(total_duration_1, 60)
                 hour, minute = divmod(minute, 60)
                 print('\nPeople have spent over {} hours, {} minutes and {} seconds in transit during the year'.format(hour, minute, round(second,2)))
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 total_duration_2 = df_filtered['Trip Duration'].sum()
                 minute, second = divmod(total_duration_2, 60)
                 hour, minute = divmod(minute, 60)
                 Sel_month = months[month-1]
                 most_pop_weekday_ch =  weekdays[day]
                 print('\nDuring the month of {} on {}\'s People have spent over {} hours, {} minutes and {} seconds in transit.'.format(Sel_month,most_pop_weekday_ch,hour, minute, round(second,2)))
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 total_duration_3 = df_filtered_m['Trip Duration'].sum()
                 minute, second = divmod(total_duration_3, 60)
                 hour, minute = divmod(minute, 60)
@@ -256,14 +256,14 @@ while True:
                 minute, second = divmod(total_duration_1, 60)
                 hour, minute = divmod(minute, 60)
                 print('\nPeople have had an average travel time of {} hours, {} minutes and {} seconds during the year'.format(hour, minute, round(second,2)))
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 total_duration_2 = df_filtered['Trip Duration'].mean()
                 minute, second = divmod(total_duration_2, 60)
                 hour, minute = divmod(minute, 60)
                 Sel_month = months[month-1]
                 most_pop_weekday_ch =  weekdays[day]
                 print('\nDuring the month of {} on {}\'s People had an average travel time of {} hours, {} minutes and {} seconds.'.format(Sel_month,most_pop_weekday_ch,hour, minute, round(second,2)))
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 total_duration_3 = df_filtered_m['Trip Duration'].mean()
                 minute, second = divmod(total_duration_3, 60)
                 hour, minute = divmod(minute, 60)
@@ -288,7 +288,7 @@ while True:
                 except KeyError:
                     cofuser_dep1 = 0
                 print('\nThe count of User types for the period are as follows:\nCustomers  :{}\nSubcribers :{}\nDependents :{}'.format(cofuser_sub1,cofuser_cus1,cofuser_dep1))
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 cofuser_sub2= df_filtered['User Type'].value_counts()['Subscriber']
                 cofuser_cus2= df_filtered['User Type'].value_counts()['Customer']
                 try:
@@ -298,7 +298,7 @@ while True:
                 Sel_month = months[month-1]
                 most_pop_weekday_ch =  weekdays[day]
                 print('\nThe count of User types for the month of {} on {}\'s are as follows:\nCustomers  :{}\nSubcribers :{}\nDependents :{}'.format(Sel_month,most_pop_weekday_ch,cofuser_sub2,cofuser_cus2,cofuser_dep2))
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 cofuser_sub3= df_filtered_m['User Type'].value_counts()['Subscriber']
                 cofuser_cus3= df_filtered_m['User Type'].value_counts()['Customer']
                 try:
@@ -324,7 +324,7 @@ while True:
                     print('\nDuring the year the number of Male and Female travelers were as follows:\nMale  :{}\nFemale :{}'.format(cofuser_m1,cofuser_fm1))
                 except KeyError:
                     print('\nNo gender data available')
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 try:
                     cofuser_m2= df_filtered['Gender'].value_counts()['Male']
                     cofuser_fm2= df_filtered['Gender'].value_counts()['Female']
@@ -333,7 +333,7 @@ while True:
                     print('\nDuring the month of {} on {}\'s the number of Male and Female travelers were as follows:\nMale  :{}\nFemale :{}'.format(Sel_month,most_pop_weekday_ch,cofuser_m2,cofuser_fm2))
                 except KeyError:
                     print('\nNo gender data available')
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 try:
                     cofuser_m3= df_filtered_m['User Type'].value_counts()['Subscriber']
                     cofuser_fm3= df_filtered_m['User Type'].value_counts()['Customer']
@@ -359,7 +359,7 @@ while True:
                     print('\nThe infomation for the year suggests that :\nThe oldest user was born in {}.\nThe youngest user was born in {}.\nMost users on the system are born in {}.'.format(oldest1,youngest1,mode1))
                 except KeyError:
                      print('No Birthyear data available')
-            elif QFil_month =='y' and QFil_day =='y':
+            elif QFil_month =='y' and QuesFil_day =='y':
                 try:
                     oldest2 = int(df_filtered['Birth Year'].min())
                     youngest2 = int(df_filtered['Birth Year'].max())
@@ -369,7 +369,7 @@ while True:
                     print('\nThe infomation for the year suggests that during the month of {} on {}\'s :\nThe oldest user was born in  {}.\nThe youngest user was born in {}.\nMost users on the system are born in {}.'.format(Sel_month,most_pop_weekday_ch,oldest2,youngest2,mode2))
                 except KeyError:
                      print('No Birthyear data available')
-            elif QFil_day =='n'and QFil_month =='y':
+            elif QuesFil_day =='n'and QFil_month =='y':
                 try:
                     oldest3 = int(df_filtered_m['Birth Year'].min())
                     youngest3 = int(df_filtered_m['Birth Year'].max())
@@ -406,7 +406,7 @@ while True:
             elif QFil_month =='n' and Disp_data=='n':
                 print('You have requested not to view the data extract')
             
-            if  QFil_month =='y' and QFil_day =='y' and Disp_data=='y':
+            if  QFil_month =='y' and QuesFil_day =='y' and Disp_data=='y':
                 Sel_month = months[month-1]
                 most_pop_weekday_ch =  weekdays[day]
                 print('\nThis is the data for the month of {} for all {}\'s\n'.format(Sel_month,most_pop_weekday_ch))
@@ -420,9 +420,9 @@ while True:
                             q1=input('\n\nWould you like to see another 5 of the user data? [y/n] ').lower()
                     if q1=='n':
                         print('\nYou have requested not to view anymore of the data extract')
-            elif QFil_month =='y' and QFil_day =='y' and Disp_data=='n':
+            elif QFil_month =='y' and QuesFil_day =='y' and Disp_data=='n':
                 print('You have requested not to view the data extract')
-            if QFil_day =='n'and QFil_month =='y' and Disp_data=='y':
+            if QuesFil_day =='n'and QFil_month =='y' and Disp_data=='y':
                 Sel_month = months[month-1]
                 print('\nThis is the data for the month of {}\n'.format(Sel_month))
                 print('\n',df_filtered_m.iloc[0:rows])
@@ -435,13 +435,13 @@ while True:
                             q1=input('\n\nWould you like to see another 5 of the user data? [y/n] ').lower()
                     if q1=='n':
                         print('\nYou have requested not to view anymore of the data extract')
-            elif QFil_day =='n'and QFil_month =='y' and Disp_data=='n':
+            elif QuesFil_day =='n'and QFil_month =='y' and Disp_data=='n':
                 print('You have requested not to view the data extract')
 
 
         #code to collect the user inputs
         QFil_month = ''
-        QFil_day =''
+        QuesFil_day =''
 
 
         city = select_city()
@@ -449,11 +449,11 @@ while True:
             QFil_month = input('\n\nWould you like to filter by month? [y/n]\nNote: Select (n) to autodisplay all statistics ').lower()
             if QFil_month =='y':
                 month = select_month()
-                while QFil_day.lower() not in ['y','n']:
-                    QFil_day = input('\n\nWould you like to filter by day? [y/n] ').lower()
-                    if QFil_day =='y':
+                while QuesFil_day.lower() not in ['y','n']:
+                    QuesFil_day = input('\n\nWould you like to filter by day? [y/n] ').lower()
+                    if QuesFil_day =='y':
                         day = select_weekday()
-                    elif QFil_day =='n':
+                    elif QuesFil_day =='n':
                         print('\n\nFilter by month coming up!')
             elif QFil_month =='n':
                 print('\n\nIll be back with your stats!')
@@ -470,11 +470,11 @@ while True:
 
         #applying the necessary filters based on user inputs
         month_filter =''
-        if QFil_month =='y' and QFil_day =='n':
+        if QFil_month =='y' and QuesFil_day =='n':
             month_filter = df['start_month'] == month
             df_filtered = df[month_filter]
             df_filtered_m = df[month_filter]
-        elif QFil_month =='y' and QFil_day =='y':
+        elif QFil_month =='y' and QuesFil_day =='y':
             month_filter = df['start_month'] == month
             day_filter = df['weekday'] == day  
             combined_filter = month_filter & day_filter 
