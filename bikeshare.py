@@ -58,7 +58,7 @@ while True:
 
 
         def select_weekday():
-            '''Asks the user for the weekday required
+            '''Asks the user to select a weekday from the list below
             Args:
                 none.
             Returns:
