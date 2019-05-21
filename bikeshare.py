@@ -4,7 +4,7 @@ import numpy as np
 import datetime as dt
 
 while True:
-        pd.set_option('display.max_columns',500)
+        pd.set_option('display.max_columns',100)
         CITY_DATA = { 'chicago': 'chicago.csv',
                     'new york': 'new_york_city.csv',
                     'washington': 'washington.csv' }
